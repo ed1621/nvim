@@ -14,7 +14,6 @@ metals_config.settings = {
 }
 
 metals_config.init_options.statusBarProvider = 'on'
--- metals_config.init_options.disableColorOutput = false
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -51,6 +50,7 @@ dap.configurations.scala = {
   },
 }
 
+---@diagnostic disable-next-line: unused-local
 metals_config.on_attach = function(client, bufnr)
   require('metals').setup_dap()
 end
@@ -59,11 +59,21 @@ end
 -- COMMANDS ----------------------
 ----------------------------------
 -- LSP
-vim.cmd[[augroup lsp]]
-vim.cmd[[au!]]
-vim.cmd[[au FileType scala,sbt,sc setlocal omnifunc=v:lua.vim.lsp.omnifunc]]
-vim.cmd[[au FileType scala,sbt,sc lua require('metals').initialize_or_attach(metals_config)]]
-vim.cmd[[augroup end]]
+vim.api.nvim_create_augroup("lsp", {clear = true})
+vim.api.nvim_create_autocmd("FileType", {
+  group = "lsp",
+  pattern = "scala,sbt,sc",
+  callback = function ()
+    vim.opt_local.omnifunc = "v:lua.vim.lsp.omnifunc"
+  end
+})
+vim.api.nvim_create_autocmd("FileType", {
+  group = "lsp",
+  pattern = "scala,sbt,sc",
+  callback = function ()
+    require('metals').initialize_or_attach(metals_config)
+  end
+})
 
 -- Need for symbol highlights to work correctly
 vim.cmd [[hi! link LspReferenceText CursorColumn]]

@@ -22,7 +22,8 @@ M.converters = {
 }
 
 M.general = {
-  map = generalUtils.map
+  map = generalUtils.map,
+  writeToBuf = generalUtils.writeToBuffer
 }
 
 return M

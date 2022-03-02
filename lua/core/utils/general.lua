@@ -48,4 +48,12 @@ M.map = function(mode, keys, cmd, opt)
     map_wrapper(mode, keys, cmd, options)
 end
 
+
+M.writeToBuffer = function (text)
+  local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+  local actualRow = row - 1 --needs this for whatever reason to get the correct row
+  local current_buffer = 0
+  vim.api.nvim_buf_set_text(current_buffer, actualRow, col, actualRow, col, {text})
+end
+
 return M

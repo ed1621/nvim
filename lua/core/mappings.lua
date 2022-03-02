@@ -13,8 +13,6 @@ M.global = function()
       -- paste from clipboard
       map('v', '<leader>p', '"*p<CR>')
       map('n', '<leader>p', '"*p<CR>')
-      -- insert #!/bin/bash
-      map('n', '<leader>sb', ':Shebang<CR>')
       -- use ESC to turn off search highlighting
       map('n', '<Esc>', ':noh <CR>')
     end
@@ -47,6 +45,9 @@ M.global = function()
       map('n', 'gd', ':lua vim.lsp.buf.definition()<CR>')
       map('n', '<leader>gi', ':lua vim.lsp.buf.implementation()<CR>')
       map('n', 'gr', ':lua vim.lsp.buf.references()<CR>')
+      map('n', '<leader>d', ':lua vim.diagnostic.open_float()<CR>')
+      map('n', '<leader><leader>n', ':lua vim.diagnostic.goto_next()<CR>')
+      map('n', '<leader><leader>p', ':lua vim.diagnostic.goto_prev()<CR>')
 
     end
 
@@ -160,6 +161,7 @@ M.telescope = function()
     map('n', '<leader>lca', ':Telescope lsp_code_actions<CR><ESC>')
     map('n', '<leader>lds', ':Telescope lsp_document_symbols<CR><ESC>')
     map('n', '<leader>ld', ':lua require("telescope.builtin".lsp_diagnositcs{bufnr = 0}<CR><ESC>')
+    map('n', '<leader>td', ':Telescope diagnostics<CR>')
     -- Telescope Git
     map('n', '<leader>gc', ':Telescope git_commits<CR><ESC>')
     map('n', '<leader>gb', ':Telescope git_branches<CR><ESC>')
