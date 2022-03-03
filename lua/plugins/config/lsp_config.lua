@@ -81,6 +81,8 @@ local function setup_server(attach)
               }
             }
             opts.filetypes = {"haskell", "lhaskell", "hs", "lhs"}
+        elseif server.name == "bashls" then
+            opts.filetypes = {"sh", "bash", "bats"}
         end
 
         server:setup(opts)
