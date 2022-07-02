@@ -1,5 +1,4 @@
-plugin
-
+plugin/packer_compiled.lua
+lua/
 # there's some commands and functions related to co authors at work. So ignoring that for privacy's sake
 ftplugin/gitcommit.lua 
-lua/vimscript
