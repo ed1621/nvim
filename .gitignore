@@ -1,4 +1,4 @@
-ftplugin/*.lua
+after/ftplugin/*.lua
 lua/
 lua/user/init.lua
 lua/user/plugins.lua
