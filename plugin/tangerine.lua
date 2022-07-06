@@ -18,6 +18,9 @@ bootstrap "https://github.com/udayvir-singh/tangerine.nvim"
 bootstrap "https://github.com/udayvir-singh/hibiscus.nvim"
 
 require "tangerine".setup{
+ rtpdirs = {
+   "after"
+ },
 	compiler = {
 		verbose = false,
 		hooks = {"onsave", "oninit"}

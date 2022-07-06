@@ -17,4 +17,7 @@
   (use! :romgrk/barbar.nvim
         :requires ["kyazdani42/nvim-web-devicons"]
         :setup #(require :core.mappings.barbar))
+  (use! :Olical/conjure)
+  ;; tpope
+  (use! :tpope/vim-commentary)
 )

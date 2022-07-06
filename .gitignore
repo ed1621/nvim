@@ -1,4 +1,7 @@
-plugin/packer_compiled.lua
+ftplugin/*.lua
 lua/
+lua/user/init.lua
+lua/user/plugins.lua
+plugin/packer_compiled.lua
 # there's some commands and functions related to co authors at work. So ignoring that for privacy's sake
-ftplugin/gitcommit.lua 
+after/ftplugin/gitcommit.* 
