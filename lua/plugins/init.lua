@@ -1,4 +1,4 @@
--- :fennel:1656727547
+-- :fennel:1657119890
 do
   if (0 == vim.fn.isdirectory("/Users/ed/.local/share/nvim/site/pack/packer/start/packer.nvim")) then
     print("packer.nvim: installing in data dir...")
@@ -24,6 +24,10 @@ local function _2_(use)
       return require("plugins.configurations.neotree")
     end
     use({branch = "v2.x", config = _4_, requires = {"nvim-lua/plenary.nvim", "kyazdani42/nvim-web-devicons", "MunifTanjim/nui.nvim"}, "nvim-neo-tree/neo-tree.nvim"})
+    local function _5_()
+      return require("core.mappings.barbar")
+    end
+    use({requires = {"kyazdani42/nvim-web-devicons"}, setup = _5_, "romgrk/barbar.nvim"})
   end
   if _G.packer_bootstrap then
     return (require("packer")).sync()

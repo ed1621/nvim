@@ -14,4 +14,7 @@
 				:branch "v2.x"
 				:requires ["nvim-lua/plenary.nvim" "kyazdani42/nvim-web-devicons" "MunifTanjim/nui.nvim"]
 				:config #(require :plugins.configurations.neotree))
+  (use! :romgrk/barbar.nvim
+        :requires ["kyazdani42/nvim-web-devicons"]
+        :setup #(require :core.mappings.barbar))
 )
