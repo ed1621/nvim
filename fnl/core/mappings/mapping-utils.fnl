@@ -1,4 +1,5 @@
-(import-macros {: map!} :hibiscus.vim)
+(import-macros {: map! : g!} :hibiscus.vim)
+(g! mapleader " ")
 
 (fn bulk-add-normal-mappings [commands]
   (each [mapping commands (pairs commands)] 
