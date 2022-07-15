@@ -23,6 +23,6 @@ require "tangerine".setup{
  },
 	compiler = {
 		verbose = false,
-		hooks = {"onsave", "oninit"}
+		hooks = {"oninit"}
 	}
 }
