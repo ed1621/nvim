@@ -25,20 +25,20 @@
 ; (g! rooter_patterns [".git" "build.sbt"]
 
 (each [_ opt (ipairs [
-  "number"
-  "ai"
-  "vb"
-  "expandtab"
-  "cursorline"
-  "termguicolors"
-  "splitright"
-  "splitbelow"
-  "hidden"
-  "autoread"
-])] (set! opt true))
+                      "number"
+                      "ai"
+                      "vb"
+                      "expandtab"
+                      "cursorline"
+                      "termguicolors"
+                      "splitright"
+                      "splitbelow"
+                      "hidden"
+                      "autoread"])]
+ (set! opt true))
 
 (each [_ opt (ipairs [
-  "tabstop" 
-  "softtabstop" 
-  "shiftwidth"
-])] (set! opt 2))
+                      "tabstop" 
+                      "softtabstop" 
+                      "shiftwidth"])]
+ (set! opt 2))

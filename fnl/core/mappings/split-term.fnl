@@ -1,6 +1,7 @@
-; M.split_term = function()
-;     map('n', '<A-j>', '<C-w>j')
-;     map('n', '<A-h>', '<C-w>h')
-;     map('n', '<A-k>', '<C-w>k')
-;     map('n', '<A-l>', '<C-w>l')
-; end
+(local utils (require :core.mappings.mapping-utils))
+
+(utils.bulk-add-normal-mappings {"<A-j>" "<C-w>j"
+                                 "<A-h>" "<C-w>h"
+                                 "<A-k>" "<C-w>k"
+                                 "<A-l>" "<C-w>l"})
+
