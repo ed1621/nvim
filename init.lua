@@ -1,4 +1,3 @@
-vim.opt.number = true
 local pack_path = vim.fn.stdpath('data') .. '/site/pack'
 local fmt = string.format
 

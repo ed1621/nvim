@@ -1,2 +1,3 @@
-(print 3)
+(require :core.options)
+(require :core.mappings)
 
