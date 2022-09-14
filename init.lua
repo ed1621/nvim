@@ -1,21 +1,33 @@
 local pack_path = vim.fn.stdpath('data') .. '/site/pack'
 local fmt = string.format
 
-local function ensure_installed(user, repo)
-	local install_path = fmt('%s/packer/start/%s', pack_path, repo)
-	if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-		print(fmt('Could not find %s, cloning new copy to %s', repo, install_path))
-		vim.api.nvim_command(fmt('!git clone https://github.com/%s/%s %s', user, repo, install_path))
-		vim.api.nvim_command(fmt('packadd %s', repo))
-	end
-
-	if repo == 'hotpot.nvim' then
-		vim.cmd('helptags ' .. install_path .. '/doc')
-	end
+local function assert_installed_plugin(plugin, branch)
+  local _, _, plugin_name = string.find(plugin, [[%S+/(%S+)]])
+  local plugin_path = vim.fn.stdpath("data") .. "/site/pack/packer/start/" .. plugin_name
+  if vim.fn.empty(plugin_path) ~= 0 then
+    fprint("Couldn't find '%s', cloning new copy to %s", plugin_name, plugin_path)
+    if branch ~= nil then
+      vim.fn.system({
+        "git",
+        "clone",
+        "https://github.com/" .. plugin,
+        "--branch",
+        branch,
+        plugin_path,
+      })
+    else
+      vim.fn.system({
+        "git",
+        "clone",
+        "https://github.com/" .. plugin,
+        plugin_path,
+      })
+    end
+  end
 end
 
-ensure_installed('wbthomason', 'packer.nvim')
-ensure_installed('rktjmp', 'hotpot.nvim')
+assert_installed_plugin("wbthomason/packer.nvim")
+assert_installed_plugin("rktjmp/hotpot.mvin")
 
 require('hotpot').setup({ provide_require_fennel = true })
 require('reflect')
