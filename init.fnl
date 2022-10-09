@@ -7,6 +7,6 @@
 (require :core.mappings.general)
 (require :core.mappings.neotree)
 
-(color! zephyr)
+(color! kat.nwim)
 
 

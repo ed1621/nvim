@@ -47,25 +47,25 @@
   (use! :tpope/vim-repeat)
   (use! :tpope/vim-eunuch)
   ;; nvim cmp
-  (use! :L3MON4D3/LuaSnip 
-          :event :InsertEnter
-          :config #(require :plugins.configurations.luasnip)
-          :requires [:rafamadriz/friendly-snippets])
-  (use! :hrsh7th/nvim-cmp
-        :config #(require :plugins.configurations.cmp)
-        :requires [:hrsh7th/cmp-path
-                   :hrsh7th/cmp-buffer
-                   :hrsh7th/cmp-nvim-lsp
-                   :PaterJason/cmp-conjure
-                   :saadparwaiz1/cmp_luasnip
-                   :lukas-reineke/cmp-under-comparator
-                   :L3MON4D3/LuaSnip])
-  (use! :saadparwaiz1/cmp_luasnip
-        :after :LuaSnip)
-  (use! :lukas-reineke/cmp-under-comparator 
-          :module :cmp-under-comparator)
-  (use! :windwp/nvim-autopairs
-        :config #(let [autopairs (require :nvim-autopairs)] (autopairs.setup {})))
+  ; (use! :L3MON4D3/LuaSnip 
+  ;         :event :InsertEnter
+  ;         :config #(require :plugins.configurations.luasnip)
+  ;         :requires [:rafamadriz/friendly-snippets])
+  ; (use! :hrsh7th/nvim-cmp
+  ;       :config #(require :plugins.configurations.cmp)
+  ;       :requires [:hrsh7th/cmp-path
+  ;                  :hrsh7th/cmp-buffer
+  ;                  :hrsh7th/cmp-nvim-lsp
+  ;                  :PaterJason/cmp-conjure
+  ;                  :saadparwaiz1/cmp_luasnip
+  ;                  :lukas-reineke/cmp-under-comparator
+  ;                  :L3MON4D3/LuaSnip])
+  ; (use! :saadparwaiz1/cmp_luasnip
+  ;       :after :LuaSnip)
+  ; (use! :lukas-reineke/cmp-under-comparator 
+  ;         :module :cmp-under-comparator)
+  ; (use! :windwp/nvim-autopairs
+  ;       :config #(let [autopairs (require :nvim-autopairs)] (autopairs.setup {})))
   ;; lsp related
   (use! :nvim-treesitter/nvim-treesitter 
      :run ":TSUpdate"
@@ -100,6 +100,9 @@
   ;; ui
   (use! :glepnir/zephyr-nvim
      :requires [:nvim-treesitter/nvim-treesitter])
+  (use! :sam4llis/nvim-tundra)
+  (use! :katawful/kat.nvim
+      :tag "1.0")
   (use! :kyazdani42/nvim-web-devicons)
   (use! :mechatroner/rainbow_csv 
         :ft [:csv :tsv])
