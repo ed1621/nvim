@@ -20,6 +20,7 @@ vim.opt.hidden = true
 vim.opt.syntax = "true"
 vim.opt.autoread = true
 
+vim.cmd[[set nowrap]]
 
 require('plugins')
 require('core.mappings').global()

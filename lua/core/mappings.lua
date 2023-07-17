@@ -26,9 +26,9 @@ M.global = function()
     end
 
     local function buffer_movement_mappings()
-      map('n', '<leader>bn', ':bn<CR>')
-      map('n', '<leader>bp', ':bp<CR>')
-      map('n', '<leader>bd', ':bd!<CR>')
+      map('n', '<A-.>', ':bn<CR>')
+      map('n', '<A-,>', ':bp<CR>')
+      map('n', '<A-c>', ':bd!<CR>')
     end
 
     local function lsp_mappings()
@@ -88,6 +88,11 @@ M.telescope = function()
     map('n', '<leader>gc', ':Telescope git_commits<CR><ESC>')
     map('n', '<leader>gb', ':Telescope git_branches<CR><ESC>')
     map('n', '<leader>gst', ':Telescope git_status<CR><ESC>')
+end
+
+M.fterm = function()
+  map('n', '<leader>s', ':lua require("FTerm").toggle()<CR>')
+  map('t', '<leader>s', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
 end
 
 return M
