@@ -1,4 +1,3 @@
-vim.g.mapleader = " "
 vim.env.MYVIMRC = "$NVIM_HOME/init.lua"
 
 vim.opt.number = true
@@ -22,7 +21,7 @@ vim.opt.autoread = true
 
 vim.cmd[[set nowrap]]
 
-require('plugins')
+require("config.lazy")
+-- require('plugins')
 require('core.mappings').global()
 
-vim.cmd [[colorscheme kat.nvim]]
