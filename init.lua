@@ -22,6 +22,5 @@ vim.opt.autoread = true
 vim.cmd[[set nowrap]]
 
 require("config.lazy")
--- require('plugins')
 require('core.mappings').global()
 
