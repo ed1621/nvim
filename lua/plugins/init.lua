@@ -50,8 +50,8 @@ return {
         'nvim-treesitter/nvim-treesitter',
         build = ':TSUpdate',
         config = function()
-            require('plugins.config._treesitter').parsers()
             require('plugins.config._treesitter').config()
+            require('plugins.config._treesitter').parsers()
         end
     },
     {

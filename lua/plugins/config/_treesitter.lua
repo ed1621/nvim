@@ -4,21 +4,19 @@ M.config = function()
   local ts_config = require('nvim-treesitter.configs')
 
   ts_config.setup {
---    ensure_installed = {
---      'bash',
---      'dockerfile',
---      'hocon',
---      'jq',
---      'json',
---      'lua',
---      'python',
---      'regex',
---      'rust',
---      'scala',
---      'sql',
---      'toml',
---      'yaml'
---    },
+   ensure_installed = {
+     'bash',
+     'dockerfile',
+     'jq',
+     'json',
+     'lua',
+     'python',
+     'regex',
+     'sql',
+     'terraform',
+     'toml',
+     'yaml'
+   },
     highlight = {
       enable = true,
       additional_vim_regex_highlighting = true
@@ -34,9 +32,6 @@ M.parsers = function()
 
   parser_config.yaml = {
     used_by = {'yml', 'yaml'}
-  }
-  parser_config.scala = {
-    used_by = {'scala', 'sc', 'sbt'}
   }
   parser_config.bash = {
     used_by = {'bats', 'sh'}
