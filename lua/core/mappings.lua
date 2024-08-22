@@ -25,10 +25,16 @@ M.global = function()
       map('n', '<leader>qa', ':qa!<CR>')
     end
 
+    local function buffer_creation_mappings()
+      map('n', '<A-s>', '<C-w>v') -- vertical split
+      map('n', '<A-h>', '<C-w>n') -- horizontal split
+      map('n', '<A-n>', ':enew<CR>') -- new buffer tab
+    end
+
     local function buffer_movement_mappings()
-      map('n', '<A-.>', ':bn<CR>')
-      map('n', '<A-,>', ':bp<CR>')
-      map('n', '<A-c>', ':bd!<CR>')
+      map('n', '<A-.>', ':bn<CR>') --next buffer
+      map('n', '<A-,>', ':bp<CR>') --previous buffer
+      map('n', '<A-c>', ':bd!<CR>') --close buffer
     end
 
     local function lsp_mappings()
@@ -43,24 +49,12 @@ M.global = function()
 
     end
 
-    local function git_mappings()
-    end
-
-    local function packer_mappings()
-      map('n', '<leader>pi', ':PackerInstall<CR>')
-      map('n', '<leader>pu', ':PackerUpdate<CR>')
-      map('n', '<leader>pc', ':PackerCompile<CR>')
-      map('n', '<leader>ps', ':PackerSync<CR>')
-      map('n', '<leader>pcl', ':PackerClean<CR>')
-    end
-    
     
     general_mappings()
     save_mappings()
+    buffer_creation_mappings()
     buffer_movement_mappings()
     lsp_mappings()
-    git_mappings()
-    packer_mappings()
 end
 
 M.nvimtree = function()

@@ -82,10 +82,12 @@ return {
     },
     { 'tpope/vim-abolish' },
     { 'tpope/vim-surround' },
+    { 'tpope/vim-repeat' },
     {
         'windwp/nvim-autopairs',
         config = function ()
             require('nvim-autopairs').setup()
         end
-    }
+    },
+    { 'numToStr/Comment.nvim' }
 }
