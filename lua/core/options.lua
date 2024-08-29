@@ -4,7 +4,6 @@ vim.opt.ai = true -- auto-indent
 vim.opt.vb = true -- visual bell
 vim.opt.number = true -- line numvbrs
 vim.opt.encoding = 'utf-8'
-vim.opt.spellfile=vim.env.NVIM_HOME .. '/spell/en.utf-8.add'
 vim.opt.tabstop = 2 -- spaces that <Tab> uses
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2 -- spaces to indent
