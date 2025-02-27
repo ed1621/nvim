@@ -7,7 +7,7 @@ mason_lspconfig.setup({
     "dockerls",
     "jsonls",
     "marksman",
-    "ruff_lsp", -- python
+    "ruff", -- python
     "sqlls",
     "taplo",
     "terraformls",

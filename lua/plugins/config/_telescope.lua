@@ -22,7 +22,8 @@ telescope.setup {
       '.bloop//*',
       '.DS_Store',
       '.scalafmt.conf',
-      '.metals//*'
+      '.metals//*',
+      '.tfstate'
     }
   },
 }

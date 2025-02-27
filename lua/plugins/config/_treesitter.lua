@@ -27,15 +27,15 @@ M.config = function()
   }
 end
 
-M.parsers = function()
-  local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
-
-  parser_config.yaml = {
-    used_by = {'yml', 'yaml'}
-  }
-  parser_config.bash = {
-    used_by = {'bats', 'sh'}
-  }
-end
+-- M.parsers = function()
+--   local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
+--
+--   -- parser_config.yaml = {
+--   --   used_by = {'yml', 'yaml'}
+--   -- }
+--   parser_config.bash = {
+--     used_by = {'bats', 'sh'}
+--   }
+-- end
 
 return M

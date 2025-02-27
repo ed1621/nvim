@@ -51,7 +51,7 @@ return {
         build = ':TSUpdate',
         config = function()
             require('plugins.config._treesitter').config()
-            require('plugins.config._treesitter').parsers()
+            -- require('plugins.config._treesitter').parsers()
         end
     },
     {
@@ -89,5 +89,11 @@ return {
             require('nvim-autopairs').setup()
         end
     },
-    { 'numToStr/Comment.nvim' }
+    { 'numToStr/Comment.nvim' },
+    {
+      'benlubas/molten-nvim',
+      version = "^1.0.0",
+      build = ":UpdateRemotePlugins"
+    },
+    { 'goerz/jupytext.vim' }
 }
