@@ -22,6 +22,12 @@ return {
         end
     },
     {
+      'jemag/telescope-diff.nvim',
+      dependencies = {
+        { 'nvim-telescope/telescope.nvim' }
+      }
+    },
+    {
         'akinsho/bufferline.nvim',
         version = '*',
         dependencies = {'nvim-tree/nvim-web-devicons'},
@@ -55,17 +61,16 @@ return {
         end
     },
     {
-        'williamboman/mason.nvim',
+        'mason-org/mason.nvim',
+        version = '^1.0.0',
         config = function ()
             require('mason').setup()
         end
     },
     { 'neovim/nvim-lspconfig' },
     {
-        'williamboman/mason-lspconfig.nvim',
-        dependencies = {
-            'williamboman/mason.nvim'
-        },
+        'mason-org/mason-lspconfig.nvim',
+        version = '^1.0.0',
         config = function ()
             require('plugins.config.lsp')
         end
@@ -95,5 +100,46 @@ return {
       version = "^1.0.0",
       build = ":UpdateRemotePlugins"
     },
-    { 'goerz/jupytext.vim' }
+    {
+        'geg2102/nvim-jupyter-client',
+        config = function()
+            require('nvim-jupyter-client').setup({})
+        end
+    },
+    {
+      "lukas-reineke/indent-blankline.nvim",
+      main = "ibl",
+      config = function()
+          local highlight = {
+              "RainbowRed",
+              "RainbowYellow",
+              "RainbowBlue",
+              "RainbowOrange",
+              "RainbowGreen",
+              "RainbowViolet",
+              "RainbowCyan",
+          }
+
+          local hooks = require "ibl.hooks"
+          -- create the highlight groups in the highlight setup hook, so they are reset
+          -- every time the colorscheme changes
+          hooks.register(hooks.type.HIGHLIGHT_SETUP, function()
+              vim.api.nvim_set_hl(0, "RainbowRed", { fg = "#E06C75" })
+              vim.api.nvim_set_hl(0, "RainbowYellow", { fg = "#E5C07B" })
+              vim.api.nvim_set_hl(0, "RainbowBlue", { fg = "#61AFEF" })
+              vim.api.nvim_set_hl(0, "RainbowOrange", { fg = "#D19A66" })
+              vim.api.nvim_set_hl(0, "RainbowGreen", { fg = "#98C379" })
+              vim.api.nvim_set_hl(0, "RainbowViolet", { fg = "#C678DD" })
+              vim.api.nvim_set_hl(0, "RainbowCyan", { fg = "#56B6C2" })
+          end)
+          require("ibl").setup { indent = { highlight = highlight } }
+      end,
+      opts = {},
+    },
+  -- {
+  --   "petertriho/nvim-scrollbar",
+  --   config = function ()
+  --       require("scrollbar").setup()
+  --   end
+  -- }
 }

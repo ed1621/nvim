@@ -35,6 +35,10 @@ M.global = function()
       map('n', '<A-.>', ':bn<CR>') --next buffer
       map('n', '<A-,>', ':bp<CR>') --previous buffer
       map('n', '<A-c>', ':bd!<CR>') --close buffer
+      map('n', '<A-h>', '<C-w>h') --left split
+      map('n', '<A-l>', '<C-w>l') --right split
+      map('n', '<A-j>', '<C-w>j') --below split
+      map('n', '<A-k>', '<C-w>k') --above split
     end
 
     local function lsp_mappings()
@@ -82,11 +86,14 @@ M.telescope = function()
     map('n', '<leader>gc', ':lua require("telescope.builtin").git_commits()<CR><ESC>')
     map('n', '<leader>gb', ':lua require("telescope.builtin").git_branches()<CR><ESC>')
     map('n', '<leader>gst', ':lua require("telescope.builtin").git_status()<CR><ESC>')
+    -- Telescope file diff
+    map('n', '<leader>df',  ':lua require("telescope").extensions.diff.diff_files({hidden = true})<CR><ESC>')
+    map('n', '<leader>dfc',  ':lua require("telescope").extensions.diff.diff_current({hidden = true})<CR><ESC>')
 end
 
 M.fterm = function()
-  map('n', '<leader>s', ':lua require("FTerm").toggle()<CR>')
-  map('t', '<leader>s', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
+  map('n', '<leader>sh', ':lua require("FTerm").toggle()<CR>')
+  map('t', '<leader>sh', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>')
 end
 
 return M

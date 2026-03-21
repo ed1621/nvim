@@ -28,5 +28,6 @@ telescope.setup {
   },
 }
 
+telescope.load_extension('diff')
 --telescope.load_extension('media_files')
 --telescope.load_extension('harpoon')
